@@ -1,0 +1,18 @@
+The problem likely stems from incorrect Tailwind configuration or order of layers.  Here's a corrected example, ensuring that the `components` layer is included in the `content` array within your `tailwind.config.js` or `tailwind.config.cjs`.
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [ 
+    './src/**/*.{js,jsx,ts,tsx}',
+    // ...other content paths
+    { raw: '@layer components' }
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+Also ensure that your layer declaration is correctly placed and the classes are being correctly referenced in your HTML or JSX.  If using a CSS preprocessor, verify that it correctly handles Tailwind's directives.
