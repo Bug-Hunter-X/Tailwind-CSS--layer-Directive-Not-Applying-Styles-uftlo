@@ -1,0 +1,11 @@
+The issue lies in the Tailwind CSS configuration.  I'm using the `@layer` directive to customize some styles, but these custom styles aren't being applied. Here's a simplified example:
+
+```javascript
+@layer components {
+  .my-custom-class {
+    @apply bg-blue-500 text-white;
+  }
+}
+```
+
+The `.my-custom-class` styles aren't applied in the browser, even though the `@apply` directive should be injecting the base Tailwind classes.
